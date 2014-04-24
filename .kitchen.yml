@@ -14,5 +14,6 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[mumble::default]
+      - recipe[apt]
+      - recipe[mumble::server]
     attributes:
