@@ -15,3 +15,9 @@ SingleSpaceBeforeFirstArg:
 UnusedBlockArgument:
   Exclude:
     - spec/spec_helper.rb
+
+LineLength:
+  Exclude:
+    - recipes/server.rb
+    - spec/**/*.rb
+    - test/**/*.rb

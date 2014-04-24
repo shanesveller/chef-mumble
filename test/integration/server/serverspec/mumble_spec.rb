@@ -8,7 +8,7 @@ describe service('mumble-server') do
 end
 
 describe process('murmurd') do
-  its(:args) { should match %r{\-ini /etc/mumble\-server\.ini}}
+  its(:args) { should match %r{\-ini /etc/mumble\-server\.ini} }
   it { should be_running }
 end
 

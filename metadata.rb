@@ -12,3 +12,10 @@ supports 'ubuntu', '= 12.04'
 supports 'ubuntu', '= 14.04'
 
 recipe 'mumble::server', 'Installs Mumble VoIP server'
+
+attribute 'mumble/port',
+          display_name: 'Server Port',
+          description: 'Port VoIP server listens on',
+          required: 'optional',
+          recipes: ['mumble::server'],
+          default: 64_739

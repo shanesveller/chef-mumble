@@ -14,26 +14,26 @@ describe 'mumble::server' do
   end
 
   # Write quick specs using `it` blocks with implied subjects
-  it "installs mumble-server" do
+  it 'installs mumble-server' do
     expect(subject).to upgrade_package('mumble-server')
   end
 
-  it "configures mumble-server" do
+  it 'configures mumble-server' do
     expect(subject).to create_template('/etc/mumble-server.ini')
   end
 
-  it "enables mumble-server service" do
+  it 'enables mumble-server service' do
     expect(subject).to enable_service('mumble-server')
   end
 
-  it "starts mumble-server service" do
+  it 'starts mumble-server service' do
     expect(subject).to start_service('mumble-server')
   end
 
   %w(logfile pidfile port serverpassword bandwidth users).each do |config|
     it "sets custom config attribute #{config}" do
-      expect(subject).to render_file('/etc/mumble-server.ini').
-        with_content("#{config}=#{subject.node.mumble[config]}")
+      expect(subject).to render_file('/etc/mumble-server.ini')
+        .with_content("#{config}=#{subject.node.mumble[config]}")
     end
   end
 end
