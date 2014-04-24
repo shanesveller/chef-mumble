@@ -8,6 +8,6 @@ describe service('mumble-server') do
   it { should be_running }
 end
 
-describe port(64_739) do
+describe port(64_738) do
   it { should be_listening }
 end
