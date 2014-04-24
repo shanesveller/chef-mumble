@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'berkshelf'
+gem 'berkshelf', '~>3.0'
 
 # Uncomment these lines if you want to live on the Edge:
 #
@@ -16,3 +16,6 @@ gem 'berkshelf'
 
 gem 'test-kitchen'
 gem 'kitchen-vagrant'
+gem 'guard-rspec'
+gem 'guard-kitchen'
+gem 'guard-rubocop'
