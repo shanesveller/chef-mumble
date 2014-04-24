@@ -22,8 +22,8 @@ guard :rspec do
   watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$})   { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance' }
 end
 
-
 guard 'kitchen' do
+  watch(%r{^\.kitchen\.yml$})
   watch(%r{test/.+})
   watch(%r{^recipes/(.+)\.rb$})
   watch(%r{^attributes/(.+)\.rb$})
@@ -31,9 +31,4 @@ guard 'kitchen' do
   watch(%r{^templates/(.+)})
   watch(%r{^providers/(.+)\.rb})
   watch(%r{^resources/(.+)\.rb})
-end
-
-guard :rubocop do
-  watch(%r{.+\.rb$})
-  watch(%r{(?:.+/)?\.rubocop\.yml$}) { |m| File.dirname(m[0]) }
 end
