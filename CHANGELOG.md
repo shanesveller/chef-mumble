@@ -5,7 +5,7 @@ This file is used to list changes made in each version of the mumble cookbook.
 
 0.1.0
 -----
-- [your_name] - Initial release of mumble
+- [Shane Sveller] - Initial release of mumble
 
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
