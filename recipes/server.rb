@@ -5,7 +5,7 @@ end
 template '/etc/mumble-server.ini' do
   owner 'root'
   group 'mumble-server'
-  mode 0600
+  mode 0640
   source 'mumble-server.ini.erb'
   notifies :restart, 'service[mumble-server]'
 end
