@@ -12,7 +12,7 @@ platforms:
   - name: ubuntu-14.04
 
 suites:
-  - name: default
+  - name: server
     run_list:
       - recipe[apt]
       - recipe[mumble::server]
