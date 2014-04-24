@@ -16,5 +16,6 @@ execute "murmurd -supw #{node.mumble.supassword} -ini /etc/mumble-server.ini" do
 end
 
 service 'mumble-server' do
+  supports [:start, :stop, :restart]
   action [:enable, :start]
 end
