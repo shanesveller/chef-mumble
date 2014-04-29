@@ -30,6 +30,11 @@ describe 'mumble::server' do
     expect(subject).to start_service('mumble-server')
   end
 
+  it 'sets the superuser password' do
+    command = "murmurd -supw #{subject.node.mumble.supassword} -ini /etc/mumble-server.ini"
+    expect(subject).to run_execute(command)
+  end
+
   %w(logfile pidfile port serverpassword bandwidth users).each do |config|
     it "sets custom config attribute #{config}" do
       expect(subject).to render_file('/etc/mumble-server.ini')
