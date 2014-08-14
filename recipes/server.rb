@@ -10,7 +10,7 @@ template '/etc/mumble-server.ini' do
   notifies :restart, 'service[mumble-server]'
 end
 
-execute "murmurd -supw #{node.mumble.supassword} -ini /etc/mumble-server.ini" do
+execute "murmurd -ini /etc/mumble-server.ini -supw #{node.mumble.supassword}" do
   notifies :restart, 'service[mumble-server]'
   user 'mumble-server'
 end
